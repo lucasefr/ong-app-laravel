@@ -10,11 +10,10 @@ class Classe extends Model
     use softDeletes;
 
     protected $fillable = [
-        'year',
         'semester',
-        'email',
-        'start',
-        'end'
+        'email'
 
     ];
+
+    protected $dates = ['created_at', 'updated_at', 'year', 'start', 'end', 'delete_at'] ;
 }

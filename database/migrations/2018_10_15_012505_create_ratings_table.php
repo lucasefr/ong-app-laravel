@@ -17,6 +17,7 @@ class CreateRatingsTable extends Migration
             $table->increments('id');
             $table->double('rating');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -4,15 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Separetedclass extends Model
+class City extends Model
 {
     //
+
     use softDeletes;
 
     protected $fillable = [
-        'hour',
-        'day'
-    ];
+        'name'
 
-    protected $dates = ['delete_at'] ;
+    ];
 }

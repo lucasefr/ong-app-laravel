@@ -20,6 +20,7 @@ class CreateClassesTable extends Migration
             $table->date('start');
             $table->date('end');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

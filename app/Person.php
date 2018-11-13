@@ -18,9 +18,15 @@ class Person extends Model
         'name',
         'email',
         'cpf',
-        'phone',
-        'birthDate'
+        'phone'
+
     ];
+
+    protected $dates = ['created_at', 'updated_at', 'bithDate', 'delete_at'] ;
+
+    public function adress(){
+        return $this->hasOne('App\Adress');
+    }
 
 
 }

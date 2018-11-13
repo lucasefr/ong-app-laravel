@@ -12,4 +12,6 @@ class Schoolsubject extends Model
         'name'
 
     ];
+
+    protected $dates = ['delete_at'] ;
 }

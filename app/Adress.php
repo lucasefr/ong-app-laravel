@@ -17,4 +17,35 @@ class Adress extends Model
         'city',
         'cep'
     ];
+
+    protected $dates = ['created_at', 'updated_at', 'delete_at'] ;
+
+
+
+    public function director()
+    {
+        return $this->belongsTo('App\Director');
+    }
+
+    public function administrator()
+    {
+        return $this->belongsTo('App\Administrator');
+    }
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
+    }
+
+    public function student()
+    {
+        return $this->belongsTo('App\Student');
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo('App\Teacher');
+    }
+
+
 }

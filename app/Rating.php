@@ -13,4 +13,6 @@ class Rating extends Model
         'rating'
 
     ];
+
+    protected $dates = ['delete_at'] ;
 }

@@ -20,8 +20,9 @@ class CreateDirectorsTable extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->date('birthDate');
-            $table->string('adress');
+            $table->integer('address_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

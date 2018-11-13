@@ -14,7 +14,12 @@ class Director extends Model
         'cpf',
         'email',
         'phone',
-        'birthDate',
-        'adress'
+        'adress_id'
     ];
+
+    protected $dates = ['created_at', 'updated_at', 'bithDate', 'delete_at'] ;
+
+    public function adress(){
+        return $this->hasOne('App\Adress');
+    }
 }

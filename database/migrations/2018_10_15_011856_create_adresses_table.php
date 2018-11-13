@@ -21,7 +21,12 @@ class CreateAdressesTable extends Migration
             $table->string('state');
             $table->string('city');
             $table->integer('cep');
+            $table->integer('teacher_id');
+            $table->integer('student_id');
+            $table->integer('director_id');
+            $table->integer('administrator_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

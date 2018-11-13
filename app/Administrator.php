@@ -15,9 +15,14 @@ class Administrator extends Model
         'cpf',
         'email',
         'phone',
-        'birthDate',
         'adress'
     ];
+
+    protected $dates = ['created_at', 'updated_at', 'bithDate', 'delete_at'] ;
+
+    public function adress(){
+        return $this->hasOne('App\Adress');
+    }
 
 
 }
