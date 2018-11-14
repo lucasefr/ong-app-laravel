@@ -8,8 +8,6 @@ class CreateAdministratorsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -18,9 +16,9 @@ class CreateAdministratorsTable extends Migration
             $table->string('name');
             $table->integer('cpf')->unique();
             $table->string('email')->unique();
-            $table->string('phone');
+            $table->string('phone')->unique();
             $table->date('birthDate');
-            $table->integer('address_id');
+            $table->integer('address_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,8 +26,6 @@ class CreateAdministratorsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

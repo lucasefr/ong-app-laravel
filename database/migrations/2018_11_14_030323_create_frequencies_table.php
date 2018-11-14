@@ -4,19 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstatesTable extends Migration
+class CreateFrequenciesTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('estates', function (Blueprint $table) {
+        Schema::create('frequencies', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('city_id');
-            $table->string('name');
+            $table->boolean('presence');
+            $table->date('date');
+            $table->integer('student_id')->unsigned();
+            $table->integer('separetedClass_id')->unsigned();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -25,6 +26,6 @@ class CreateEstatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estates');
+        Schema::dropIfExists('frequencies_');
     }
 }

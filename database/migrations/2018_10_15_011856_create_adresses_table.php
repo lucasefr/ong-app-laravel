@@ -8,8 +8,6 @@ class CreateAdressesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -18,13 +16,8 @@ class CreateAdressesTable extends Migration
             $table->string('street');
             $table->string('number');
             $table->string('complement');
-            $table->string('state');
-            $table->string('city');
             $table->integer('cep');
-            $table->integer('teacher_id');
-            $table->integer('student_id');
-            $table->integer('director_id');
-            $table->integer('administrator_id');
+            $table->integer('city_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,8 +25,6 @@ class CreateAdressesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

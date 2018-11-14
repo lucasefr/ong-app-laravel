@@ -4,20 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeparetedclassesTable extends Migration
+class CreateTeacherSchoolsubjectTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('separetedclasses', function (Blueprint $table) {
+        Schema::create('teacher_schoolsubject', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('hour', ['first', 'second']);
-            $table->enum('day', ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']);
+            $table->integer('teacher_id')->unsigned();
             $table->integer('schoolsubject_id')->unsigned();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -26,6 +24,6 @@ class CreateSeparetedclassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('separetedclasses');
+        Schema::dropIfExists('teacher_schoolsubject');
     }
 }

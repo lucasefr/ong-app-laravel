@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCitiesTable extends Migration
+class CreateSeparetedClassClasseTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
+        Schema::create('separetedclass_classe', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('estate_id')->unsigned();
+            $table->integer('classe_id')->unsigned();
+            $table->integer('separetedClass_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ class CreateCitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('separetedclass_classe');
     }
 }
