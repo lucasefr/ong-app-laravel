@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Director extends Model
 {
@@ -20,6 +21,6 @@ class Director extends Model
     protected $dates = ['created_at', 'updated_at', 'bithDate', 'delete_at'] ;
 
     public function adress(){
-        return $this->hasOne('App\Adress');
+        return $this->belongsTo('App\Adress');
     }
 }

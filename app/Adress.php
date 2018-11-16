@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Adress extends Model
 {
@@ -22,29 +23,34 @@ class Adress extends Model
 
 
 
-    public function director()
+    public function directors()
     {
-        return $this->belongsTo('App\Director');
+        return $this->hasMany('App\Director');
     }
 
-    public function administrator()
+    public function administrators()
     {
-        return $this->belongsTo('App\Administrator');
+        return $this->hasMany('App\Administrator');
     }
 
-    public function person()
+    // public function person()
+    // {
+    //     return $this->hasMany('App\Person');
+    // }
+
+    public function students()
     {
-        return $this->belongsTo('App\Person');
+        return $this->hasMany('App\Student');
     }
 
-    public function student()
+    public function teachers()
     {
-        return $this->belongsTo('App\Student');
+        return $this->hasMany('App\Teacher');
     }
 
-    public function teacher()
+    public function cities()
     {
-        return $this->belongsTo('App\Teacher');
+        return $this->belongsTo('App\City');
     }
 
 

@@ -15,6 +15,7 @@ class CreateCitiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('estate_id')->unsigned();
+            $table->date('deleted_at');
             $table->timestamps();
         });
     }

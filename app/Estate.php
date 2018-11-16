@@ -15,4 +15,8 @@ class Estate extends Model
         'name'
 
     ];
+
+    public function cities (){
+        return $this->hasMany('App\City');
+    }
 }
